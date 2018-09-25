@@ -1,0 +1,238 @@
+* {
+    -webkit-overflow-scrolling: touch;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    max-width: 90%;
+}
+
+.container hr {
+    width: 40%;
+    background: white;
+    border: none;
+    height: 1.2px;
+}
+
+.container .left-align {
+    align-self: flex-start;
+}
+
+.flexbox {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.fullpage-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.fullpage-wp {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-flow: column nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.fullpage-wp.anim {
+    transform: translate3d(0, 0, 0);
+    -webkit-transition: all 500ms ease-out 0s;
+    transition: all 500ms ease-out 0s;
+}
+.fullpage-wp.fullpage-wp-h {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+.page {
+    box-sizing: border-box;
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+.animated {
+    opacity: 1;
+}
+
+body {
+    margin: 0;
+    background: black;
+}
+
+.fullpage-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.page {
+    display: block;
+    text-align: center;
+    font-size: 26px;
+    color: #eee;
+}
+
+.bg {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background: url('../img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+@media (max-width: 652px) {
+    .bg {
+        background-size: 185%;
+    }
+}
+
+@media (max-width: 992px) {
+    .bg {
+        background-size: 100%;
+        background-position-y: 84%;
+        background-color: black;
+    }
+}
+
+@media (max-width: 772px) {
+    .bg {
+        background-size: 150%;
+    }
+}
+
+
+.page-1 {
+    padding-top: 100px;
+    /* background: url('background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat; */
+}
+
+.page-2 {
+    padding-top: 100px;
+    background: url('../img/background2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page-3 {
+    padding-top: 50px;
+    background: black;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+h3,
+p {
+    font-size: 16px;
+}
+
+.button-group {
+    position: absolute;
+    left: 0px;
+    z-index: 9;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 30px;
+    justify-content: center;
+}
+
+.button-group button {
+    display: inline-block;
+    margin: 10px;
+    color: #000;
+    background: #fff;
+    background: rgba(255, 255, 255, .5);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    padding: 9px 18px;
+    border: none;
+    outline: none;
+    width: 1px;
+    height: 40px;
+    padding: 3px;
+    background: #ffffff66;
+    cursor: pointer;
+}
+
+.fade-in {
+    opacity:0;
+    animation:fadeIn ease-in 1;
+    animation-fill-mode:forwards;
+    animation-duration:0.5s;
+    animation-delay: .2s
+}
+
+
+.button-group button.active {
+    background: white;
+    color: #fff;
+}
+
+.nav {
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    z-index: 10;
+    width: 100%;
+}
+
+.nav .logo {
+    cursor: pointer;
+}
+
+.nav .block {
+    display: flex;
+    width: 641px;
+    justify-content: space-around;
+}
+
+.nav .block .item {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.main-block {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.main-block .col {
+    width: 50%;
+}
+
+.main-block .col .scrollable-text {
+    max-width: 300px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
