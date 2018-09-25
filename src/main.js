@@ -1,6 +1,8 @@
-    new Vue ({
-        el: '#app',
-        data: {
+new Vue({
+    el: '#app',
+    data() {
+        const that = this;
+        return {
             index: 0,
             pageNum: 0,
             opts: {
@@ -9,23 +11,27 @@
                 loop: false,
                 duration: 300,
                 beforeChange: function(ele, current, next) {
-                    this.index = next;
+                    console.log('before', current, next)
+                    that.index = next;
                 },
                 afterChange: function(ele, current) {
-                    this.index = current;
+                    that.index = current;
+                    console.log('after', current)
                 }
             }
+        };
+    },
+    methods: {
+        moveTo: function(index) {
+            this.$refs.fullpage.$fullpage.moveTo(index, true);
         },
-        methods: {
-            moveTo: function(index) {
-                this.$refs.fullpage.$fullpage.moveTo(index, true);
-            },
-            showPage: function() {
-                this.pageNum++;
-                this.$refs.fullpage.$fullpage.$update();
-            }
+        showPage: function() {
+            this.pageNum++;
+            this.$refs.fullpage.$fullpage.$update();
         }
-    })
+    }
+})
+
     let lFollowX = 0,
     lFollowY = 0,
     x = 0,
